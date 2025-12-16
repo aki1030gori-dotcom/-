@@ -1,55 +1,32 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Login Form</title>
-<style>
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0; /* 余白を0に設定 */
-    background-color: #ffffff; /* 背景色を白に設定 */
-  }
-  form {
-    background: transparent; /* フォームの背景を透明に設定 */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  input[type="password"], input[type="submit"] {
-    margin: 10px 0;
-    padding: 10px;
-    width: calc(100% - 24px);
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-  }
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>パスワードページ</title>
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("pw").value;
+      if (password === "1234") {
+        document.getElementById("secret").style.display = "block";
+        document.getElementById("login").style.display = "none";
+      } else {
+        alert("パスワードが違います");
+      }
+    }
+  </script>
 </head>
 <body>
-<form name="myform" onsubmit="return checkText()">
-  <input type="password" name="PW" placeholder="パスワード">
-  <input type="submit" value="ログイン">
-</form>
-<script>
-function checkText() {
-  if (!document.myform.PW.value) {
-    alert("パスワードを入力してください。");
-    return false;
-  }
-  document.myform.action = "https://sites.google.com/view/******/" + document.myform.PW.value;
-  return true;
-}
-</script>
+
+<div id="login">
+  <h2>パスワードを入力してください</h2>
+  <input type="password" id="pw">
+  <button onclick="checkPassword()">入る</button>
+</div>
+
+<div id="secret" style="display:none;">
+  <h1>ひみつのページ</h1>
+  <p>ここはパスワードを知っている人だけが見られます。</p>
+</div>
+
 </body>
 </html>
