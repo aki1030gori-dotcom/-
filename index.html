@@ -43,3 +43,40 @@ mysite
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>パスワード入力</title>
+</head>
+<body>
+  <h2>パスワードを入力してください</h2>
+  <input type="password" id="pw">
+  <button onclick="check()">送信</button>
+
+  <script>
+    function check() {
+      const password = "1234"; // パスワード
+      const input = document.getElementById("pw").value;
+
+      if (input === password) {
+        location.href = "next.html"; // 移動先
+      } else {
+        alert("パスワードが違います");
+      }
+    }
+  </script>
+</body>
+</html>
