@@ -1,14 +1,19 @@
+mysite
+├ index.html
+└ secret.html
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>パスワードページ</title>
+  <title>ログイン</title>
   <script>
     function checkPassword() {
       const password = document.getElementById("pw").value;
+
       if (password === "1234") {
-        document.getElementById("secret").style.display = "block";
-        document.getElementById("login").style.display = "none";
+        // パスワードが合っていたら移動
+        location.href = "secret.html";
       } else {
         alert("パスワードが違います");
       }
@@ -17,16 +22,24 @@
 </head>
 <body>
 
-<div id="login">
   <h2>パスワードを入力してください</h2>
+
   <input type="password" id="pw">
   <button onclick="checkPassword()">入る</button>
-</div>
 
-<div id="secret" style="display:none;">
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ひみつのページ</title>
+</head>
+<body>
+
   <h1>ひみつのページ</h1>
   <p>ここはパスワードを知っている人だけが見られます。</p>
-</div>
 
 </body>
 </html>
