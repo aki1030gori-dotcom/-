@@ -60,3 +60,64 @@ function checkText() {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+  }
+  .box {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+    display: block;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+  }
+</style>
+</head>
+
+<body>
+  <div class="box">
+    <input type="password" id="pw" placeholder="パスワード">
+    <button onclick="checkText()">ログイン</button>
+  </div>
+
+<script>
+function checkText() {
+  const password = document.getElementById("pw").value;
+
+  if (password === "1234") {
+    // ここに本当の移動先URLを書く
+    location.href = "https://sites.google.com/view/123456789";
+  } else {
+    alert("パスワードが違います");
+  }
+}
+</script>
+</body>
+</html>
