@@ -1,82 +1,62 @@
-mysite
-├ index.html
-└ secret.html
-
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>ログイン</title>
-  <script>
-    function checkPassword() {
-      const password = document.getElementById("pw").value;
-
-      if (password === "1234") {
-        // パスワードが合っていたら移動
-        location.href = "secret.html";
-      } else {
-        alert("パスワードが違います");
-      }
-    }
-  </script>
+<meta charset="UTF-8">
+<title>Login Form</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+  }
+  form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  input[type="password"], input[type="submit"] {
+    margin: 10px 0;
+    padding: 10px;
+    width: calc(100% - 24px);
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
 </head>
+
 <body>
+<form name="myform" onsubmit="return checkText()">
+  <input type="password" name="PW" placeholder="パスワード">
+  <input type="submit" value="ログイン">
+</form>
 
-  <h2>パスワードを入力してください</h2>
+<script>
+function checkText() {
+  const password = document.myform.PW.value;
 
-  <input type="password" id="pw">
-  <button onclick="checkPassword()">入る</button>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>ひみつのページ</title>
-</head>
-<body>
-
-  <h1>ひみつのページ</h1>
-  <p>ここはパスワードを知っている人だけが見られます。</p>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>パスワード入力</title>
-</head>
-<body>
-  <h2>パスワードを入力してください</h2>
-  <input type="password" id="pw">
-  <button onclick="check()">送信</button>
-
-  <script>
-    function check() {
-      const password = "1234"; // パスワード
-      const input = document.getElementById("pw").value;
-
-      if (input === password) {
-        location.href = "next.html"; // 移動先
-      } else {
-        alert("パスワードが違います");
-      }
-    }
-  </script>
+  if (password === "1234") {
+    // 正しいパスワードのとき
+    document.myform.action =
+      "https://sites.google.com/view/123456789";
+    return true;
+  } else {
+    // 間違っているとき
+    alert("パスワードが違います。");
+    return false;
+  }
+}
+</script>
 </body>
 </html>
