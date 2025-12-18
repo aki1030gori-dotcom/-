@@ -132,22 +132,26 @@ function checkText() {
 
 
 
-inport random
+import random
 
 count = 0
 
-def math:
+def math():
     global count
-    num1 = random.randint(1,10)
-    num2 = random.randint(1,10)
-    print(”計算をしなさい”)
-    print(str(num1) +”+”+ str(num2) +”=?”)
-    study = input()
-    if num1 + num2 = study:
-        print(”正解”)
+    num1 = random.randint(1, 10)
+    num2 = random.randint(1, 10)
+
+    print("計算をしなさい")
+    print(str(num1) + " + " + str(num2) + " = ?")
+
+    study = int(input())
+
+    if num1 + num2 == study:
+        print("正解")
         count = count + 1
-        study()
+        math()
     else:
-        print(”不正解”)
-        print(”正解した問題数は” + str(count) + ”問”)
+        print("不正解")
+        print("正解した問題数は" + str(count) + "問")
+
 math()
